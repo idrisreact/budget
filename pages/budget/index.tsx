@@ -1,7 +1,7 @@
-import { useState } from "react";
-import styled from "styled-components";
-import BudgetSystem from "../../src/components/BudgetSystem/BudgetSystem";
-import { Button, Heading, Text, Wrapper } from "../../styles/utils/utils";
+import { useState } from 'react';
+import styled from 'styled-components';
+import BudgetSystem from '../../components/BudgetSystem/BudgetSystem';
+import { Button, Heading, Text, Wrapper } from '../../styles/utils/utils';
 
 const BudgetPage = () => {
   const [showBudget, setShowBudget] = useState<boolean>(false);

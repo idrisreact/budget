@@ -1,7 +1,7 @@
-import { ReactNode, FC, useRef, useEffect } from "react";
-import Link from "next/link";
-import styled from "styled-components";
-import { Wrapper } from "../../../styles/utils/utils";
+import { ReactNode, FC, useRef, useEffect } from 'react';
+import Link from 'next/link';
+import styled from 'styled-components';
+import { Wrapper } from '../../styles/utils/utils';
 
 interface IProps {
   children: ReactNode;
@@ -10,9 +10,9 @@ const Header: FC<IProps> = ({ children }) => {
   const HeaderRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    document.addEventListener("scroll", handleScroll);
+    document.addEventListener('scroll', handleScroll);
 
-    return () => document.removeEventListener("scroll", handleScroll);
+    return () => document.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleScroll = () => {
@@ -20,13 +20,13 @@ const Header: FC<IProps> = ({ children }) => {
       // if (HeaderRef.current?.getBoundingClientRect())
       if (window.scrollY > 60) {
         if (HeaderRef.current?.style) {
-          HeaderRef.current.style.backgroundColor = "#000";
-          HeaderRef.current.style.color = "#fff";
+          HeaderRef.current.style.backgroundColor = '#000';
+          HeaderRef.current.style.color = '#fff';
         }
       } else {
         if (HeaderRef.current?.style) {
-          HeaderRef.current.style.backgroundColor = "#fff";
-          HeaderRef.current.style.color = "#000";
+          HeaderRef.current.style.backgroundColor = '#fff';
+          HeaderRef.current.style.color = '#000';
         }
       }
     }

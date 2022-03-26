@@ -1,16 +1,13 @@
-import type { NextPage } from "next";
-import styled, { useTheme } from "styled-components";
-import Card from "../src/components/Card/Card";
-import ProfileCard from "../src/components/ProfileCard/ProfileCard";
-import { Wrapper } from "../styles/utils/utils";
+import type { NextPage } from 'next';
+import styled from 'styled-components';
 
-const Home: NextPage = () => {
-  return (
-    <div>
-      <Wrapper>home</Wrapper>
-    </div>
-  );
-};
+import { Wrapper } from '../styles/utils/utils';
+
+const Home: NextPage = () => (
+  <div>
+    <Wrapper>home</Wrapper>
+  </div>
+);
 
 export default Home;
 

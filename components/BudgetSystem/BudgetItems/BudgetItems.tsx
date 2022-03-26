@@ -1,6 +1,6 @@
-import { FC } from "react";
-import { FormData } from "../../../interfaces/budget";
-import BudgetItem from "./BudgetItem";
+import { FC } from 'react';
+import { FormData } from '../../../src/interfaces/budget';
+import BudgetItem from './BudgetItem';
 
 interface IProps {
   budgets: FormData[];
