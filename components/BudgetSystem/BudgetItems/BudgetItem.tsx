@@ -1,6 +1,6 @@
-import { FC } from "react";
-import styled from "styled-components";
-import { FormData } from "../../../interfaces/budget";
+import { FC } from 'react';
+import styled from 'styled-components';
+import { FormData } from '../../../src/interfaces/budget';
 
 const BudgetItem: FC<FormData> = ({ expense, amount }) => {
   const capitalized = (expenseString: string) => {

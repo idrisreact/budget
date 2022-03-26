@@ -1,20 +1,13 @@
-import Image from "next/image";
-import styled from "styled-components";
-import { Button, Heading, Text } from "../../../styles/utils/utils";
-import Card from "../Card/Card";
+import Image from 'next/image';
+import styled from 'styled-components';
+import { Button, Heading, Text } from '../../styles/utils/utils';
+import Card from '../Card/Card';
 
 const ProfileCard = () => {
   return (
     <ProfileCardWrapper>
       <ImageContainer>
-        <Image
-          src="/idris.png"
-          alt="profile-image"
-          width={60}
-          height={60}
-          objectFit="cover"
-          objectPosition="top"
-        />
+        <Image src="/idris.png" alt="profile-image" width={60} height={60} objectFit="cover" objectPosition="top" />
       </ImageContainer>
       <ProfileDetailsContainer>
         <Details>

@@ -1,15 +1,13 @@
-import { useState } from "react";
-import styled from "styled-components";
-import { useForm } from "react-hook-form";
-import { Button, Input } from "../../../styles/utils/utils";
-import { FormData } from "../../interfaces/budget";
-import BudgetItems from "./BudgetItems/BudgetItems";
-import ProfileCard from "../ProfileCard/ProfileCard";
+import { useState } from 'react';
+import styled from 'styled-components';
+import { useForm } from 'react-hook-form';
+import { Button, Input } from '../../styles/utils/utils';
+import { FormData } from '../../src/interfaces/budget';
+import BudgetItems from './BudgetItems/BudgetItems';
+import ProfileCard from '../ProfileCard/ProfileCard';
 
 const BudgetSystem = () => {
-  const [budgets, setBudgets] = useState<FormData[]>([
-    { expense: "rent", amount: 300 },
-  ]);
+  const [budgets, setBudgets] = useState<FormData[]>([{ expense: 'rent', amount: 300 }]);
   const { register, handleSubmit } = useForm<FormData>();
 
   const submitHandler = (data: FormData) => {
@@ -20,20 +18,11 @@ const BudgetSystem = () => {
       <BudgetMenu>
         <ProfileCard />
         <BudgetItems budgets={budgets} />
-        <h1>hello</h1>
       </BudgetMenu>
       <BudgetCanvas>
         <InputController onSubmit={handleSubmit(submitHandler)}>
-          <Input
-            placeholder="Expense"
-            {...register("expense", { required: true })}
-          />
-          <Input
-            placeholder="Amount"
-            type="number"
-            step=".01"
-            {...register("amount")}
-          />
+          <Input placeholder="Expense" {...register('expense', { required: true })} />
+          <Input placeholder="Amount" type="number" step=".01" {...register('amount')} />
           <Button>Add Expense</Button>
         </InputController>
       </BudgetCanvas>
@@ -51,7 +40,6 @@ const BudgetCanvas = styled.div`
 const BudgetMenu = styled.div`
   display: grid;
   gap: 10px;
-
   margin-bottom: 50px;
   @media (min-width: ${({ theme }) => theme.screenSize.lg}) {
     grid-template-columns: 2fr 300px 2fr;
