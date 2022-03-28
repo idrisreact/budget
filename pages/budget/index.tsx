@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import BudgetSystem from '../../components/BudgetSystem/BudgetSystem';
+// import BudgetSystem from '@/components/BudgetSystem/BudgetSystem';
 import { Button, Heading, Text, Wrapper } from '../../styles/utils/utils';
 
 const BudgetPage = () => {
@@ -11,13 +12,15 @@ const BudgetPage = () => {
   };
   return (
     <>
-      <Wrapper>
+      <Wrapper data-testid="budget-page">
         <Hero>
           <div>
             <Heading>Budget</Heading>
             <Text>A budget system that can help you reach your goals</Text>
           </div>
-          <Button onClick={toggleBudget}>Start Here</Button>
+          <Button data-testid="button" onClick={toggleBudget}>
+            Start Here
+          </Button>
         </Hero>
         {showBudget && <BudgetSystem />}
       </Wrapper>

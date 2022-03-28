@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useForm } from 'react-hook-form';
 import { Button, Input } from '../../styles/utils/utils';
 import { FormData } from '../../src/interfaces/budget';
-import BudgetItems from './BudgetItems/BudgetItems';
+import BudgetItems from '@/components/BudgetSystem/BudgetItems/BudgetItems';
 import ProfileCard from '../ProfileCard/ProfileCard';
 
 const BudgetSystem = () => {
@@ -17,7 +17,9 @@ const BudgetSystem = () => {
     <>
       <BudgetMenu>
         <ProfileCard />
-        <BudgetItems budgets={budgets} />
+        <div className="budgets">
+          <BudgetItems budgets={budgets} />
+        </div>
       </BudgetMenu>
       <BudgetCanvas>
         <InputController onSubmit={handleSubmit(submitHandler)}>
@@ -43,6 +45,10 @@ const BudgetMenu = styled.div`
   margin-bottom: 50px;
   @media (min-width: ${({ theme }) => theme.screenSize.lg}) {
     grid-template-columns: 2fr 300px 2fr;
+    max-width: 80%;
+    .budgets {
+      grid-column: 3/-1;
+    }
   }
 `;
 const InputController = styled.form`

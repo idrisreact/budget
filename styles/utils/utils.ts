@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   padding: 0 15px;
   margin: 0 auto;
   max-width: 100%;
-  @media (max-width: ${({ theme }) => theme.screenSize.md}) {
+  @media (max-width: ${({ theme }) => theme.screenSize?.md}) {
     max-width: 600px;
   }
 
@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
 
 export const Heading = styled.h1`
   font-size: 24px;
-  color: ${(props) => (props.color ? props.color : "black")};
+  color: ${(props) => (props.color ? props.color : 'black')};
 
   @media (min-width: ${({ theme }) => theme.screenSize.lg}) {
     font-size: 36px;
