@@ -16,12 +16,12 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Heading = styled.h1`
+export const Heading = styled.h1<any>`
   font-size: 24px;
   color: ${(props) => (props.color ? props.color : 'black')};
 
   @media (min-width: ${({ theme }) => theme.screenSize.lg}) {
-    font-size: 36px;
+    font-size: ${(props) => (props.fontSize ? props.fontSize : '24px')};
     letter-spacing: 0.7px;
   }
 `;
@@ -44,9 +44,7 @@ export const Button = styled.button`
 `;
 
 export const Input = styled.input`
-  height: 48px;
-  padding: 12px 16px;
-  box-shadow: inset 0 0 10px rgb(0 0 0 / 15%);
-  border: none;
-  border-radius: 5px;
+  padding: 8px 16px 8px 5px;
+  border: 1px solid #b0b5b3;
+  border-radius: 3px;
 `;
