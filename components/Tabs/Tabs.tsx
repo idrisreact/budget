@@ -5,7 +5,6 @@ import TabItems from './TabItems/TabItems';
 export interface PageTabsProps {
   id: string | number;
   title: string;
-  isSelected?: boolean;
   url: string;
 }
 
@@ -14,19 +13,16 @@ const pageTabs: PageTabsProps[] = [
     id: 1,
     title: 'Clients',
     url: 'client',
-    isSelected: true,
   },
   {
     id: 2,
     title: 'Active Clients',
     url: 'active',
-    isSelected: false,
   },
   {
     id: 3,
     title: 'Budgets',
     url: 'cal',
-    isSelected: false,
   },
 ];
 
@@ -50,7 +46,7 @@ const Tabs: FC<IProps> = ({ slug }) => {
   return (
     <TabsWrapper>
       {tabs.map(({ id, ...tab }) => (
-        <TabItems id={id} {...tab} clickHandle={() => selectedTabHandler(id)} />
+        <TabItems slug={slug} key={id} id={id} {...tab} />
       ))}
     </TabsWrapper>
   );

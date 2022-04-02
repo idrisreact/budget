@@ -1,18 +1,14 @@
 import { FC } from 'react';
 import styled from 'styled-components';
 import { Text } from '@/styles/utils/utils';
+import { Expense } from '../interfaces';
 
-interface IProps {
-  expense: string;
-  amount: number;
-}
-
-const ExpenseItem: FC<IProps> = ({ expense, amount }) => {
+const ExpenseItem: FC<Expense> = ({ expenses, amount }) => {
   return (
     <>
       <ExpenseItems>
         <Circles />
-        <Text>{expense}</Text>
+        <Text>{expenses}</Text>
         <p>£{amount}</p>
       </ExpenseItems>
     </>

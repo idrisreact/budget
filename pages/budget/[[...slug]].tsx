@@ -9,6 +9,7 @@ const BudgetHome = () => {
   const router = useRouter();
   const { slug } = router.query;
   const paths = slug && slug[0];
+
   enum URLS {
     CLIENTS = 'client',
     ACTIVE = 'active',
@@ -17,8 +18,9 @@ const BudgetHome = () => {
 
   return (
     <Wrapper>
-      <Tabs slug={slug} />
+      <Tabs slug={paths} />
       <TabsDisplayPage>
+        {paths === undefined && <p>Budget Page</p>}
         {paths === URLS.CLIENTS && <p>client</p>}
         {paths === URLS.ACTIVE && <p>active clients</p>}
         {paths === URLS.BUDGET && <BudgetForm />}
