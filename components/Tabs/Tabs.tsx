@@ -50,7 +50,7 @@ const Tabs: FC<IProps> = ({ slug }) => {
   return (
     <TabsWrapper>
       {tabs.map(({ id, ...tab }) => (
-        <TabItems id={id} {...tab} clickHandle={() => selectedTabHandler(id)} />
+        <TabItems key={id} id={id} {...tab} clickHandle={() => selectedTabHandler(id)} />
       ))}
     </TabsWrapper>
   );
