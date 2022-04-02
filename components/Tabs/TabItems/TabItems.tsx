@@ -4,15 +4,13 @@ import styled from 'styled-components';
 import { PageTabsProps } from '../Tabs';
 
 interface TabsProps extends PageTabsProps {
-  clickHandle: () => void;
+  slug?: string | string[] | undefined;
 }
 
-const TabItems: FC<TabsProps> = ({ title, isSelected, clickHandle, url }) => {
+const TabItems: FC<TabsProps> = ({ title, url, slug }) => {
   return (
     <Link href={url}>
-      <TabButton selected={isSelected} onClick={clickHandle}>
-        {title}
-      </TabButton>
+      <TabButton selected={slug === url}>{title}</TabButton>
     </Link>
   );
 };

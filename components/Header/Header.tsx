@@ -42,7 +42,7 @@ const Header: FC<IProps> = ({ children }) => {
                 <a>Home</a>
               </Link>
               <Link href="/budget">
-                <a>Budget</a>
+                <HeaderLinks>Budgets</HeaderLinks>
               </Link>
             </SubMenu>
           </InnerHeaderWrapper>
@@ -71,6 +71,7 @@ const InnerHeaderWrapper = styled(Wrapper)`
 
 const SubMenu = styled.div`
   display: flex;
+  align-items: center;
 
   & > * {
     margin-left: 5px;
@@ -83,5 +84,12 @@ const HeaderWrapper = styled.header`
   top: 0;
   width: 100%;
   background-color: #fff;
-  /* background-color: red; */
+`;
+
+const HeaderLinks = styled.a`
+  background: blue;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
 `;
